@@ -4,7 +4,6 @@ public class Comb {
 
 	public String[][] temparray; // = new String[210][totn];
 	public int totn, lin;
-	public String sss;
 	String[] v1;
 
 	public void Comb2(int n, int m, int k, String s, String[] v) {
@@ -22,7 +21,6 @@ public class Comb {
 
 			s = s.trim();
 			v1 = s.split(" "); // v1 armazena a posição que serão recuperados da matriz
-			sss = ""; // sss assim como ss são utilizadas para a junção dos números da combinação
 
 			for (int i = 0; i < v1.length; i++) { // loop da matriz v1 que possui o endereço do elemento da matriz v
 				temparray[lin][i] = v[Integer.parseInt(v1[i]) - 1];
