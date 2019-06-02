@@ -3,8 +3,8 @@ package processos;
 public class Fatorial {
 
 	public static double Fatorial(int n, int p) {
-		int fatorialp = 1;
-		int fatorialn = 1;
+		double fatorialp = 1;
+		double fatorialn = 1;
 
 		while (p > 0) {
 			fatorialp *= p;
@@ -13,6 +13,7 @@ public class Fatorial {
 			n--;
 		}
 		
+		System.out.println("n -> " + fatorialn + "  p -> " + fatorialp);
 		double resultado = (double) (fatorialn / fatorialp);
 
 		return resultado;
