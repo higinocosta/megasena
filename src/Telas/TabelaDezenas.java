@@ -30,7 +30,7 @@ public class TabelaDezenas extends JPanel {
 	Botoes botoes = new Botoes();
 	static CombVisual combinar = new CombVisual();
 	
-	public static double totg;
+	//public static double totg;
 
 	public TabelaDezenas() {
 		setupGui();
@@ -67,7 +67,9 @@ public class TabelaDezenas extends JPanel {
 					dezenasordenadas = dezenas;
 					Collections.sort(dezenasordenadas);
 					ordenados.setText(Arrays.toString(dezenasordenadas.toArray()));
-					botoes.vet = dezenas.toArray(new String[dezenas.size()]);
+					Botoes.vet = dezenas.toArray(new String[dezenas.size()]);
+					CombVisual.totn = 6;
+					CombVisual.n = dezenas.size();
 					System.out.println(" vet " + Arrays.toString(botoes.vet));
 					System.out.println("dezena -> " + dezenas.size());
 				}

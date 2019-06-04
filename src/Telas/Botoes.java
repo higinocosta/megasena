@@ -21,17 +21,16 @@ public class Botoes extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
-
-	// Declara componentes
+	// Declara componentes da Barra de progresso
 	public static JProgressBar progressBar;
 	
 	private JButton botao1 = new JButton();
 	private JButton botao2 = new JButton();
 	private GridBagLayout gridBagLayoutJogos = new GridBagLayout();
-	static CombVisual xxx = new CombVisual();
-	public int n;
-	public String[] vet;// = new String[];
+	static CombVisual combinacao = new CombVisual();
+	public static String[] vet;// = new String[];
 	JogosGerados jogos = new JogosGerados();
+	static Jogos jg = new Jogos();
 
 	public Botoes() {
 		setupGui();
@@ -66,15 +65,20 @@ public class Botoes extends JPanel {
                 new ActionListener(){
                     public void actionPerformed(ActionEvent e){
                     	ativaBarra();
-                		//xxx.Comb2(n, xxx.totn, 1, "", vet);
-                    	xxx.Comb2(n, 6, 1, "", vet);
+                    	CombVisual.preparaJogos();
+                    	combinacao.Comb2(CombVisual.n, 6, 1, "", vet);
+                    	jg.Jogos2(CombVisual.linhas, CombVisual.temparray);
                     }
                 });
 		
 		botao2.addActionListener(
                 new ActionListener(){
                     public void actionPerformed(ActionEvent e){
-                    //	xxx.Comb2(n, 6, 1, "", Arrays.sort(vet));
+                    	ativaBarra();
+                    	CombVisual.preparaJogos();
+                    	Arrays.sort(vet);
+                    	combinacao.Comb2(CombVisual.n, 6, 1, "", vet);
+                    	jg.Jogos2(CombVisual.linhas, CombVisual.temparray);
                     }
                 });
 

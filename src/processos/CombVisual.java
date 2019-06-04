@@ -11,7 +11,7 @@ public class CombVisual {
 	public static int totn, lin, n;
 	public static double totg;
 	String[] v1;
-	static String[] linhas;
+	public static String[] linhas;
 
 	public void Comb2(int n, int m, int k, String s, String[] v) {
 
@@ -52,6 +52,7 @@ public class CombVisual {
 		for (int i = 0; i < totn; i++) {
 			linhas[i] = "N-" + (i + 1);
 		}
+		
 		
 		
 	}
