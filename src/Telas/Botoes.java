@@ -4,33 +4,31 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JProgressBar;
 
 import processos.CombVisual;
+//import telas.BarraProgresso;
 
 public class Botoes extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
-	// Declara componentes da Barra de progresso
-	public static JProgressBar progressBar;
 	
+	//BarradeProgresso barra = new BarradeProgresso();
 	private JButton botao1 = new JButton();
 	private JButton botao2 = new JButton();
 	private GridBagLayout gridBagLayoutJogos = new GridBagLayout();
 	static CombVisual combinacao = new CombVisual();
-	public static String[] vet;// = new String[];
-	JogosGerados jogos = new JogosGerados();
 	static Jogos jg = new Jogos();
+	JogosGerados jogos = new JogosGerados();
+	BarraProgresso barra1 = new BarraProgresso();
+	public static String[] vet;// = new String[];
 
 	public Botoes() {
 		setupGui();
@@ -61,11 +59,15 @@ public class Botoes extends JPanel {
 		this.add(botao2, new GridBagConstraints(1, 0, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER,
 				GridBagConstraints.NONE, new Insets(5, 5, 5, 5), 0, 0));
 		
+		BarradeProgresso.getProgressBar();
+		
 		botao1.addActionListener(
                 new ActionListener(){
                     public void actionPerformed(ActionEvent e){
-                    	ativaBarra();
                     	CombVisual.preparaJogos();
+                    	//BarradeProgresso.getProgressBar();
+                    	BarradeProgresso.ativaBarra();
+                    	//BarraProgresso.ativaBarra();
                     	combinacao.Comb2(CombVisual.n, 6, 1, "", vet);
                     	jg.Jogos2(CombVisual.linhas, CombVisual.temparray);
                     }
@@ -74,43 +76,13 @@ public class Botoes extends JPanel {
 		botao2.addActionListener(
                 new ActionListener(){
                     public void actionPerformed(ActionEvent e){
-                    	ativaBarra();
                     	CombVisual.preparaJogos();
                     	Arrays.sort(vet);
+                    	//BarradeProgresso.getProgressBar();
+                    	BarradeProgresso.ativaBarra();
                     	combinacao.Comb2(CombVisual.n, 6, 1, "", vet);
                     	jg.Jogos2(CombVisual.linhas, CombVisual.temparray);
                     }
                 });
-
 	}
-	
-
-	private static JProgressBar getProgressBar() {
-		if (progressBar == null) {
-			progressBar = new JProgressBar();
-			progressBar.setBounds(new Rectangle(18, 459, 419, 25));
-			progressBar.setStringPainted(true);
-			progressBar.setMinimum(0);
-			progressBar.setMaximum(100);
-		}
-		return progressBar;
-	}
-
-	public static void atualizaBarra(int valor) {
-		progressBar.setValue(valor);
-	}
-
-	public static void ativaBarra() {
-
-		// final BarraProgresso barra = new BarraProgresso();
-
-		JFrame frame = new JFrame("Progress Bar Example");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setContentPane(getProgressBar());
-		frame.pack();
-		frame.setVisible(true);
-		frame.setLocation(400, 300);
-
-	}
-
 }

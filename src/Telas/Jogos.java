@@ -38,8 +38,8 @@ public class Jogos extends JFrame {
 
 		getContentPane().add(painelFundo);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("Demo Application");
-		setSize(400, 600);
+		setTitle("Tabela de Combinações");
+		setSize(600, 600);
 		setVisible(true);
 	}
 }

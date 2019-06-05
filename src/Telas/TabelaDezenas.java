@@ -70,8 +70,8 @@ public class TabelaDezenas extends JPanel {
 					Botoes.vet = dezenas.toArray(new String[dezenas.size()]);
 					CombVisual.totn = 6;
 					CombVisual.n = dezenas.size();
-					System.out.println(" vet " + Arrays.toString(botoes.vet));
-					System.out.println("dezena -> " + dezenas.size());
+					//System.out.println(" vet " + Arrays.toString(botoes.vet));
+					//System.out.println("dezena -> " + dezenas.size());
 				}
 			});
 		}

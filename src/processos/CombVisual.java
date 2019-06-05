@@ -2,8 +2,8 @@ package processos;
 
 import java.util.Arrays;
 
-import Telas.Botoes;
-import combinacao.Combina;
+//import Telas.BarraProgresso;
+import Telas.BarradeProgresso;
 
 public class CombVisual {
 
@@ -12,6 +12,9 @@ public class CombVisual {
 	public static double totg;
 	String[] v1;
 	public static String[] linhas;
+	GravaCSV gravar = new GravaCSV();
+	//BarraProgresso Barra2 = new BarraProgresso();
+	
 
 	public void Comb2(int n, int m, int k, String s, String[] v) {
 
@@ -29,8 +32,11 @@ public class CombVisual {
 
 			Arrays.sort(v1); // ordena o array com combinação
 			temparray[lin++] = v1; // amarzena a combinação no array definitivo
-
-			Botoes.atualizaBarra((int) ((int) lin * 100 / Combina.totg));
+			
+			//BarraProgresso.atualizaBarra((int) ((int) lin * 100 / totg));
+			BarradeProgresso.atualizaBarra((int) ((int) lin * 100 / totg)); // Atualiza Barra de Progresso
+			System.out.println("lin -> " + lin + " totg -> " + totg + " % " + ((int) ((int) lin * 100 / totg)));
+			gravar.GravaCSV(v1); // Grava arquivo
 
 			return;
 
@@ -40,21 +46,15 @@ public class CombVisual {
 		Comb2(n, m, k + 1, s, v); // quando elimina cada bloco de combinação reinicia a Macro Comb2 até que m seja
 									// maior que n
 	}
-	
+
 	public static void preparaJogos() {
 
 		totg = Fatorial.Fatorial(n, totn);
-		System.out.println("total de combinações a serem geradas:" + totg);
-
 		temparray = new String[(int) totg][totn];
 		linhas = new String[totn];
 
 		for (int i = 0; i < totn; i++) {
 			linhas[i] = "N-" + (i + 1);
 		}
-		
-		
-		
 	}
-
 }

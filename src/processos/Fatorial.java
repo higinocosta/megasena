@@ -13,8 +13,8 @@ public class Fatorial {
 			n--;
 		}
 		
-		System.out.println("n -> " + fatorialn + "  p -> " + fatorialp);
 		double resultado = (double) (fatorialn / fatorialp);
+		//System.out.println("n -> " + n + " ( " + fatorialn + " )  p -> " + p + " (" + fatorialp + " ) resultado -> " + resultado);
 
 		return resultado;
 	}
