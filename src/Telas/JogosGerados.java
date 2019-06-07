@@ -11,9 +11,6 @@ import javax.swing.JTable;
 
 public class JogosGerados extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JTable tabela = new JTable();
 	private GridBagLayout gridBagLayoutJogos = new GridBagLayout();
@@ -27,22 +24,6 @@ public class JogosGerados extends JPanel {
 
 	private void setupGui() {
 
-		/*
-		// Criando nome das colunas
-		String columnNames[] = { "1ª Dezena", "2ª Dezena", "3ª Dezena", "4ª Dezena", "5ª Dezena", "6ª Dezena",
-				"7ª Dezena", "8ª Dezena", "9ª Dezena", "10ª Dezena", "11ª Dezena", "12ª Dezena", "13ª Dezena",
-				"14ª Dezena", "15ª Dezena" };
-		// Create some data
-		String dataValues[][] = {{ "1ª Dezena", "2ª Dezena", "3ª Dezena", "4ª Dezena", "5ª Dezena", "6ª Dezena",
-			"7ª Dezena", "8ª Dezena", "9ª Dezena", "10ª Dezena", "11ª Dezena", "12ª Dezena", "13ª Dezena",
-			"14ª Dezena", "15ª Dezena" },
-		{ "1ª Dezena", "2ª Dezena", "3ª Dezena", "4ª Dezena", "5ª Dezena", "6ª Dezena",
-			"7ª Dezena", "8ª Dezena", "9ª Dezena", "10ª Dezena", "11ª Dezena", "12ª Dezena", "13ª Dezena",
-			"14ª Dezena", "15ª Dezena" },
-		{ "1ª Dezena", "2ª Dezena", "3ª Dezena", "4ª Dezena", "5ª Dezena", "6ª Dezena",
-			"7ª Dezena", "8ª Dezena", "9ª Dezena", "10ª Dezena", "11ª Dezena", "12ª Dezena", "13ª Dezena",
-			"14ª Dezena", "15ª Dezena" }};
-		*/
 		String columnNames[] = {};
 		String dataValues[][] = {{}};
 

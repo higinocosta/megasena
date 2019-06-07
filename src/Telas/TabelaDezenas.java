@@ -1,5 +1,8 @@
 package Telas;
 
+import java.awt.Button;
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -14,6 +17,7 @@ import java.util.Collections;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 
@@ -25,21 +29,30 @@ public class TabelaDezenas extends JPanel {
 	private GridBagLayout gridBagLayoutLeftTop;
 	private JPanel panel;
 	private JTextField numeros, ordenados;
-	static ArrayList<String> dezenas = new ArrayList<String>();
+	public static ArrayList<String> dezenas = new ArrayList<String>();
 	ArrayList<String> dezenasordenadas = new ArrayList<String>();
 	Botoes botoes = new Botoes();
 	static CombVisual combinar = new CombVisual();
-	
-	//public static double totg;
 
 	public TabelaDezenas() {
 		setupGui();
 	}
 
+	public void AtivarBotoes(Object painel, boolean acao) {
+		Container c = (Container)painel;
+        Component[] components = c.getComponents();
+        for (Component component : components) {
+            //setEnabledAll(component, acao);
+            component.setEnabled(acao);
+        };
+	}
+
+	public void LiberaBotoes(JRadioButton botao, boolean acao) {
+		botao.setEnabled(true);;
+	}
 	public void setupGui() {
 
 		NumberFormat f = new DecimalFormat("00");
-		// ArrayList<String> dezenas = new ArrayList<String>();
 
 		gridBagLayoutLeftTop = new GridBagLayout();
 
@@ -68,10 +81,27 @@ public class TabelaDezenas extends JPanel {
 					Collections.sort(dezenasordenadas);
 					ordenados.setText(Arrays.toString(dezenasordenadas.toArray()));
 					Botoes.vet = dezenas.toArray(new String[dezenas.size()]);
-					CombVisual.totn = 6;
 					CombVisual.n = dezenas.size();
-					//System.out.println(" vet " + Arrays.toString(botoes.vet));
-					//System.out.println("dezena -> " + dezenas.size());
+
+					if (dezenas.size() >= 6) {
+						
+						System.out.print(dezenas.size() + " - ");
+						System.out.println("-----");
+						botoes.AtivaBotao();
+						botoes.bot.setEnabled(true);
+						System.out.println(botoes.bot.getText());
+						System.out.println("-----");
+						//LiberaBotoes(botoes.quantidade.)
+						/*
+						for (int i = dezenas.size();i <= dezenas.size(); i++) {
+							botoes.panel1.setVisible(true);
+							((Container) botoes.quantidade).getComponent(1).setEnabled(true);
+							//AtivarBotoes(botoes.bot., true);
+							//System.out.println(botoes.bot.);
+						}
+						//botoes.panel1.setEnabled(true);
+						 */
+					}
 				}
 			});
 		}

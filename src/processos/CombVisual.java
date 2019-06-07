@@ -2,6 +2,7 @@ package processos;
 
 import java.util.Arrays;
 
+import Telas.BarraProgresso;
 //import Telas.BarraProgresso;
 import Telas.BarradeProgresso;
 
@@ -33,7 +34,7 @@ public class CombVisual {
 			Arrays.sort(v1); // ordena o array com combinação
 			temparray[lin++] = v1; // amarzena a combinação no array definitivo
 			
-			//BarraProgresso.atualizaBarra((int) ((int) lin * 100 / totg));
+			BarraProgresso.atualizarBarra((int) ((int) lin * 100 / totg));
 			BarradeProgresso.atualizaBarra((int) ((int) lin * 100 / totg)); // Atualiza Barra de Progresso
 			System.out.println("lin -> " + lin + " totg -> " + totg + " % " + ((int) ((int) lin * 100 / totg)));
 			gravar.GravaCSV(v1); // Grava arquivo

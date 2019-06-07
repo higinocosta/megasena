@@ -7,6 +7,8 @@ import java.awt.Insets;
 
 import javax.swing.JFrame;
 
+//INCLUIR BARRA DE PROGRESSO NO FRAMER
+
 public class ApplicationFrame extends JFrame {
 	/**
 	 * 
@@ -29,12 +31,12 @@ public class ApplicationFrame extends JFrame {
 
 	public void setupGUI() {
 		this.setTitle("Demo Application");
-		this.setMinimumSize(new Dimension(800, 400));
+		this.setMinimumSize(new Dimension(570, 450));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gridBagLayoutAppFrame = new GridBagLayout();
 		mainPanel = new MainPanel();
 		this.setLayout(gridBagLayoutAppFrame);
-		this.getContentPane().add(mainPanel, new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.CENTER,
-				GridBagConstraints.BOTH, new Insets(10, 10, 10, 10), 0, 0));
+		this.getContentPane().add(mainPanel, new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.WEST,
+				GridBagConstraints.NONE, new Insets(10, 10, 10, 10), 0, 0));
 	}
 }

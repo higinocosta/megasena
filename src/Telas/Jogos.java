@@ -37,7 +37,7 @@ public class Jogos extends JFrame {
 				.setHorizontalAlignment(SwingConstants.CENTER);
 
 		getContentPane().add(painelFundo);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Tabela de Combinações");
 		setSize(600, 600);
 		setVisible(true);
