@@ -20,7 +20,7 @@ public class TelaGeral extends JFrame {
 	private ButtonGroup itens;
 	public int xxx = 0;
 
-	public void TelaGeral(int linhax, int colunay, int minimus, int maximus) {
+	public void cartoes(int linhax, int colunay, int minimus, int maximus) {
 
 		// Prepando o Container
 		Container container = getContentPane();
@@ -72,7 +72,7 @@ public class TelaGeral extends JFrame {
 
 	// executa a aplicação
 	public static void main(String args[]) {
-		TelaGeral aplicacao = new TelaGeral();
+		cartoes aplicacao = new cartoes();
 
 		// configura o encerramento da aplicação
 		aplicacao.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
