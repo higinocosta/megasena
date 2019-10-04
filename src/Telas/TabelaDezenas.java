@@ -1,6 +1,7 @@
 package Telas;
 
 import java.awt.Button;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.GridBagConstraints;
@@ -33,6 +34,8 @@ public class TabelaDezenas extends JPanel {
 	ArrayList<String> dezenasordenadas = new ArrayList<String>();
 	Botoes botoes = new Botoes();
 	static CombVisual combinar = new CombVisual();
+	String xxx;
+	
 
 	public TabelaDezenas() {
 		setupGui();
@@ -48,7 +51,7 @@ public class TabelaDezenas extends JPanel {
 	}
 
 	public void LiberaBotoes(JRadioButton botao, boolean acao) {
-		botao.setEnabled(true);;
+		botao.setEnabled(true);
 	}
 	public void setupGui() {
 
@@ -73,35 +76,22 @@ public class TabelaDezenas extends JPanel {
 				public void actionPerformed(ActionEvent e) {
 					if (b.isSelected()) {
 						dezenas.add(e.getActionCommand());
+						//dezenas.add(ActionEvent);
+						//b.setBackground(Color.GREEN);
 					} else {
 						dezenas.remove(e.getActionCommand());
 					}
-					numeros.setText(Arrays.toString(dezenas.toArray()));
-					dezenasordenadas = dezenas;
-					Collections.sort(dezenasordenadas);
-					ordenados.setText(Arrays.toString(dezenasordenadas.toArray()));
-					Botoes.vet = dezenas.toArray(new String[dezenas.size()]);
+					
+					
+					xxx = String.join(",", dezenas);
+					numeros.setText(xxx);
+					Botoes.vet = xxx.split(",");
+					System.out.println(xxx);
+					Botoes.veto = xxx.split(",");
+					Arrays.sort(Botoes.veto);
+					ordenados.setText(Arrays.toString(Botoes.veto));
 					CombVisual.n = dezenas.size();
 
-					if (dezenas.size() >= 6) {
-						
-						System.out.print(dezenas.size() + " - ");
-						System.out.println("-----");
-						botoes.AtivaBotao();
-						botoes.bot.setEnabled(true);
-						System.out.println(botoes.bot.getText());
-						System.out.println("-----");
-						//LiberaBotoes(botoes.quantidade.)
-						/*
-						for (int i = dezenas.size();i <= dezenas.size(); i++) {
-							botoes.panel1.setVisible(true);
-							((Container) botoes.quantidade).getComponent(1).setEnabled(true);
-							//AtivarBotoes(botoes.bot., true);
-							//System.out.println(botoes.bot.);
-						}
-						//botoes.panel1.setEnabled(true);
-						 */
-					}
 				}
 			});
 		}

@@ -12,9 +12,6 @@ import Telas.Botoes;
 import Telas.TabelaDezenas;
 
 public class MainPanel extends JPanel {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private TabelaDezenas tabeladezenas;
 	private Botoes botoes;

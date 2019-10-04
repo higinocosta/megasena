@@ -2,8 +2,6 @@ package processos;
 
 import java.util.Arrays;
 
-import Telas.BarraProgresso;
-//import Telas.BarraProgresso;
 import Telas.BarradeProgresso;
 
 public class CombVisual {
@@ -14,8 +12,7 @@ public class CombVisual {
 	String[] v1;
 	public static String[] linhas;
 	GravaCSV gravar = new GravaCSV();
-	//BarraProgresso Barra2 = new BarraProgresso();
-	
+	//BarraProgresso barra = new BarraProgresso();
 
 	public void Comb2(int n, int m, int k, String s, String[] v) {
 
@@ -32,10 +29,13 @@ public class CombVisual {
 			}
 
 			Arrays.sort(v1); // ordena o array com combinação
-			temparray[lin++] = v1; // amarzena a combinação no array definitivo
+			temparray[lin] = v1; // amarzena a combinação no array definitivo
+			lin++;
+			//barra.atualizarBarra((int) ((int) lin * 100 / totg));
+			//this.BarradeProgresso.atualizaBarra((int) ((int) lin * 100 / totg));
+		    //BarradeProgresso.atualizaBarra((int) ((int) lin * 100 / totg));
 			
-			BarraProgresso.atualizarBarra((int) ((int) lin * 100 / totg));
-			BarradeProgresso.atualizaBarra((int) ((int) lin * 100 / totg)); // Atualiza Barra de Progresso
+			//BarradeProgresso.atualizaBarra((int) ((int) lin * 100 / totg)); // Atualiza Barra de Progresso
 			System.out.println("lin -> " + lin + " totg -> " + totg + " % " + ((int) ((int) lin * 100 / totg)));
 			gravar.GravaCSV(v1); // Grava arquivo
 
@@ -49,10 +49,14 @@ public class CombVisual {
 	}
 
 	public static void preparaJogos() {
+		
+		BarradeProgresso barra = new BarradeProgresso();
 
 		totg = Fatorial.Fatorial(n, totn);
 		temparray = new String[(int) totg][totn];
 		linhas = new String[totn];
+		barra.ativaBarra();
+		//barra.ativarBarra();
 
 		for (int i = 0; i < totn; i++) {
 			linhas[i] = "N-" + (i + 1);

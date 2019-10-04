@@ -10,9 +10,6 @@ import javax.swing.JFrame;
 //INCLUIR BARRA DE PROGRESSO NO FRAMER
 
 public class ApplicationFrame extends JFrame {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private static ApplicationFrame instance = null;
 	private MainPanel mainPanel;
